@@ -6,7 +6,9 @@ import grails.gorm.services.Service
 @Service(Plan)
 @CurrentTenant
 interface PlanDataService {
-    List<Plan> findAll()
-    Plan save(String title)
-    void deleteByTitle(String title)
+  List<Plan> findAll()
+
+  Plan save(String title)
+
+  void deleteByTitle(String title)
 }

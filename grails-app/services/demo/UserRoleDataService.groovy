@@ -8,15 +8,15 @@ import groovy.transform.CompileStatic
 @CompileStatic
 interface UserRoleDataService {
 
-    @Query("""select $user.username from ${UserRole userRole}
+  @Query("""select $user.username from ${UserRole userRole}
     inner join ${User user = userRole.user}
     inner join ${Role role = userRole.role}
     where $role.authority = $authority""")
-    List<String> findAllUsernameByAuthority(String authority)
+  List<String> findAllUsernameByAuthority(String authority)
 
-    UserRole save(User user, Role role)
+  UserRole save(User user, Role role)
 
-    void delete(User user, Role role)
+  void delete(User user, Role role)
 
-    void deleteByUser(User user)
+  void deleteByUser(User user)
 }
